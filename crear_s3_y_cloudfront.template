@@ -11,7 +11,7 @@ Resources:
     Metadata:
       Comment: 'Bucket to store some data'
     Properties:
-      AccessControl: 'Private'
+      AccessControl: PublicReadWrite
       BucketName: !Ref BucketName
     Type: 'AWS::S3::Bucket'
 
