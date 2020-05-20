@@ -71,7 +71,7 @@ Resources:
 
   CfOriginAccessIdentity:
     Metadata:
-      Comment: !Ref BucketName
+      Comment: 'mcad'
     Properties:
       CloudFrontOriginAccessIdentityConfig:
         Comment: !Ref BucketName
@@ -80,7 +80,7 @@ Resources:
 Outputs:
   S3BucketName:
     Description: 'Bucket name'
-    Value: 'mcad'
+    Value: !Ref S3Bucket
   CfDistributionId:
     Description: 'Id for our cloudfront distribution'
     Value: !Ref CfDistribution
