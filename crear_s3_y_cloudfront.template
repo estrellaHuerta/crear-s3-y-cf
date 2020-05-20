@@ -25,7 +25,7 @@ Resources:
           - Action:
               - 's3:GetObject'
             Effect: 'Allow'
-            Principal:'*'
+            Principal: '*'
             Resource:
               - !Sub 'arn:aws:s3:::${S3Bucket}/*'
     Type: 'AWS::S3::BucketPolicy'
@@ -69,8 +69,6 @@ Resources:
     Type: 'AWS::CloudFront::Distribution'
 
   CfOriginAccessIdentity:
-    Metadata:
-      Comment: !Ref BucketName
     Properties:
       CloudFrontOriginAccessIdentityConfig:
         Comment: !Ref BucketName
