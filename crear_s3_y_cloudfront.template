@@ -71,10 +71,10 @@ Resources:
 
   CfOriginAccessIdentity:
     Metadata:
-      Comment: 'mcad'
+      Comment: !Ref BucketName
     Properties:
       CloudFrontOriginAccessIdentityConfig:
-        Comment: 'mcad'
+        Comment: !Ref BucketName
     Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
 
 Outputs:
