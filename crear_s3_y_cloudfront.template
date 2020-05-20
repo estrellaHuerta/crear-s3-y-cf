@@ -71,10 +71,10 @@ Resources:
 
   CfOriginAccessIdentity:
     Metadata:
-      Comment: 'Access S3 bucket content only through CloudFront'
+      Comment: 'mcad'
     Properties:
       CloudFrontOriginAccessIdentityConfig:
-        Comment: 'Access S3 bucket content only through CloudFront'
+        Comment: 'mcaddd'
     Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
 
 Outputs:
