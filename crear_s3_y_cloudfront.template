@@ -74,7 +74,7 @@ Resources:
       Comment: 'mcad'
     Properties:
       CloudFrontOriginAccessIdentityConfig:
-        Comment: 'mcaddd'
+        Comment: 'mcad'
     Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
 
 Outputs:
