@@ -71,7 +71,7 @@ Resources:
 
   CfOriginAccessIdentity:
     Metadata:
-      Comment: !Ref BucketName
+      Comment: 'mcad'
     Properties:
       CloudFrontOriginAccessIdentityConfig:
         Comment: !Ref BucketName
