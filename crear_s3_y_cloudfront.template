@@ -25,8 +25,7 @@ Resources:
           - Action:
               - 's3:GetObject'
             Effect: 'Allow'
-            Principal:
-              CanonicalUser: !GetAtt CfOriginAccessIdentity.S3CanonicalUserId
+            Principal:'*'
             Resource:
               - !Sub 'arn:aws:s3:::${S3Bucket}/*'
     Type: 'AWS::S3::BucketPolicy'
@@ -71,7 +70,7 @@ Resources:
 
   CfOriginAccessIdentity:
     Metadata:
-      Comment: 'mcad'
+      Comment: !Ref BucketName
     Properties:
       CloudFrontOriginAccessIdentityConfig:
         Comment: !Ref BucketName
