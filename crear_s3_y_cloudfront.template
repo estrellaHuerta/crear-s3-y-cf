@@ -25,8 +25,7 @@ Resources:
           - Action:
               - 's3:GetObject'
             Effect: 'Allow'
-            Principal:
-              CanonicalUser: !GetAtt CfOriginAccessIdentity.S3CanonicalUserId
+            Principal: '*'
             Resource:
               - !Sub 'arn:aws:s3:::${S3Bucket}/*'
     Type: 'AWS::S3::BucketPolicy'
@@ -76,14 +75,3 @@ Resources:
       CloudFrontOriginAccessIdentityConfig:
         Comment: !Ref S3Bucket
     Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
-
-Outputs:
-  S3BucketName:
-    Description: 'Bucket name'
-    Value: !Ref S3Bucket
-  CfDistributionId:
-    Description: 'Id for our cloudfront distribution'
-    Value: !Ref CfDistribution
-  CfDistributionDomainName:
-    Description: 'Domain name for our cloudfront distribution'
-    Value: !GetAtt CfDistribution.DomainName
