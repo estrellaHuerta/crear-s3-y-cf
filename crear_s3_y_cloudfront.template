@@ -65,17 +65,10 @@ Resources:
             Id: !Sub 's3-origin-${S3Bucket}'
             OriginPath: ''
             S3OriginConfig:
-              OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CfOriginAccessIdentity}'
+              OriginAccessIdentity:
         PriceClass: 'PriceClass_All'
     Type: 'AWS::CloudFront::Distribution'
 
-  CfOriginAccessIdentity:
-    Metadata:
-      Comment: !Ref BucketName
-    Properties:
-      CloudFrontOriginAccessIdentityConfig:
-        Comment: !Ref BucketName
-    Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
 
 Outputs:
   S3BucketName:
