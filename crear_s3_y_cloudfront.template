@@ -74,7 +74,7 @@ Resources:
       Comment: !Ref BucketName
     Properties:
       CloudFrontOriginAccessIdentityConfig:
-        Comment: !Ref BucketName
+        Comment: !Ref S3Bucket
     Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
 
 Outputs:
