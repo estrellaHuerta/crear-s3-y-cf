@@ -38,7 +38,12 @@ Resources:
         Comment: 'A simple distribution with an S3 origin'
         CustomErrorResponses:
           - ErrorCode: 403
-            ResponseCode: 404
+            ErrorCachingMinTTL: 0
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+          - ErrorCode: 404
+            ErrorCachingMinTTL: 0
+            ResponseCode: 200
             ResponsePagePath: /index.html
         DefaultCacheBehavior:
           AllowedMethods:
