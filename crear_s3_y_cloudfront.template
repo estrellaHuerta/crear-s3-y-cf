@@ -36,6 +36,10 @@ Resources:
     Properties:
       DistributionConfig:
         Comment: 'A simple distribution with an S3 origin'
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 404
+            ResponsePagePath: /index.html
         DefaultCacheBehavior:
           AllowedMethods:
             - 'HEAD'
